@@ -8,7 +8,14 @@ $('.remove').on('click', function(e) {
 })
 
 $('.edit').on('click', function(e) {
-  $(this).parent().find('form').removeClass('hidden')
+
+  const url = $(this).parent().find('input[name="url"]').val()
+  const title = $(this).parent().find('input[name="title"]').val()
+
+  const $form = $('form.edit-task')
+  $form.attr("action", url)
+  $form.find('input[name="title"]').val(title)
+
 })
 
 $('form.edit-task').on('submit', function(e) {
