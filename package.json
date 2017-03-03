@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install && bower install",
+    "prestart": "npm install",
     "dev": "nodemon app",
+    "postinstall": "./node_modules/bower/bin/bower install",
     "start": "node app"
   },
   "dependencies": {
